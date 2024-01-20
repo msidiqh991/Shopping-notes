@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { v4 as uuid } from "uuid";
 
 const Form = () => {
     const [name, setName] = useState('')
@@ -6,6 +7,8 @@ const Form = () => {
 
     function handleSubmit(event) {
         event.preventDefault()
+        const newItem = { id: uuid(), name, quantity, checked: false }
+        console.log(newItem)
     }
 
     const quantityNum = [...Array(20)].map((_, index) => (
@@ -16,7 +19,9 @@ const Form = () => {
         <form className="add-form" onSubmit={ handleSubmit }>
             <h3>Hari ini belanja apa kita?</h3>
             <div>
-                <select>{ quantityNum }</select>
+                <select value={ quantity } onChange={(event) => setQuantity(event.target.value)}>
+                    { quantityNum }
+                </select>
                 <input type="text" placeholder="Item name ..." 
                     value={ name } 
                     onChange={(event) => setName(event.target.value) } 
