@@ -1,4 +1,4 @@
-const ItemList = ({ item }) => {
+const ItemList = ({ item, onDeleteItem }) => {
     return(
         <>
             <li key={ item.id }>
@@ -6,7 +6,7 @@ const ItemList = ({ item }) => {
                     <span style={ item.checked ? { textDecoration: 'line-through' } : {}}>
                         { item.quantity + " Pcs " } { item.name }
                     </span>
-                <button>&times;</button>
+                <button onClick={() => onDeleteItem(item.id)}>&times;</button>
             </li>
         </>
     )
