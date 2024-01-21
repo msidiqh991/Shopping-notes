@@ -1,12 +1,12 @@
 import ItemList from "./ItemList"
 
-const GroceryList = ({ items, onDeleteItem }) => {
+const GroceryList = ({ items, onDeleteItem, onToggleItem }) => {
     return(
         <>
         <div className="list">
         <ul>
             { items.map((item) => (
-                <ItemList item={item} key={item.id} onDeleteItem={onDeleteItem} />
+                <ItemList item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem}/>
             ))}
         </ul>
         </div>
@@ -16,7 +16,7 @@ const GroceryList = ({ items, onDeleteItem }) => {
                 <option value="name">Sort by item name</option>
                 <option value="checked">Sort by checklist</option>
             </select>
-        <button>Bersihkan Daftar</button>
+        <button>Clear List</button>
         </div>
         </>
     )

@@ -1,8 +1,8 @@
-const ItemList = ({ item, onDeleteItem }) => {
+const ItemList = ({ item, onDeleteItem, onToggleItem }) => {
     return(
         <>
             <li key={ item.id }>
-                <input type="checkbox" />
+                <input type="checkbox" checked={item.checked} onChange={() => onToggleItem(item.id)} />
                     <span style={ item.checked ? { textDecoration: 'line-through' } : {}}>
                         { item.quantity + " Pcs " } { item.name }
                     </span>
