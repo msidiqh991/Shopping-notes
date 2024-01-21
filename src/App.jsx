@@ -36,7 +36,7 @@ function App() {
         onDeleteItem={ handleDeleteItem } 
         onToggleItem={ handleToggleItem } 
         onClearItems={ handleClearItems } />
-      <Footer />
+      <Footer items={items} />
     </div>
   )
 }
