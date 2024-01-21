@@ -1,6 +1,6 @@
 import ItemList from "./ItemList"
 
-const GroceryList = ({ items, onDeleteItem, onToggleItem }) => {
+const GroceryList = ({ items, onDeleteItem, onToggleItem, onClearItems }) => {
     return(
         <>
         <div className="list">
@@ -16,7 +16,7 @@ const GroceryList = ({ items, onDeleteItem, onToggleItem }) => {
                 <option value="name">Sort by item name</option>
                 <option value="checked">Sort by checklist</option>
             </select>
-        <button>Clear List</button>
+        <button onClick={onClearItems}>Clear List</button>
         </div>
         </>
     )
